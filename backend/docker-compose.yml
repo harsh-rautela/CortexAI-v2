@@ -1,0 +1,58 @@
+services:
+
+  redis:
+    image: redis/redis-stack-server:latest
+    ports:
+      - "6379:6379"
+
+  gateway:
+    build:
+      context: .
+      dockerfile: gateway/Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./gateway/.env
+    depends_on:
+      - auth
+      - agent
+      - billing
+      - chat
+
+  auth:
+    build:
+      context: .
+      dockerfile: services/auth/Dockerfile
+    ports:
+      - "8001:8001"
+    env_file:
+      - ./services/auth/.env
+
+  agent:
+    build:
+      context: .
+      dockerfile: services/agent/Dockerfile
+    ports:
+      - "8002:8002"
+    env_file:
+      - ./services/agent/.env
+    depends_on:
+      - redis
+
+  billing:
+    build:
+      context: .
+      dockerfile: services/billing/Dockerfile
+    ports:
+      - "8003:8003"
+    env_file:
+      - ./services/billing/.env
+
+  chat:
+    build:
+      context: .
+      dockerfile: services/chat/Dockerfile
+    ports:
+      - "8004:8004"
+    env_file:
+      - ./services/chat/.env

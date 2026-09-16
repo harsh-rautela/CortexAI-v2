@@ -1,0 +1,158 @@
+# =========================================================
+# Dependencies
+# =========================================================
+
+# Ignore all node_modules everywhere
+**/node_modules/
+node_modules/
+
+
+# =========================================================
+# Environment variables / secrets
+# =========================================================
+
+# Ignore all environment files
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Allow example environment files to be committed
+!.env.example
+!**/.env.example
+
+
+# =========================================================
+# Service account / private credentials
+# =========================================================
+
+# Google/Firebase service account keys
+**/serviceAccountKey.json
+**/service-account-key.json
+**/*serviceAccount*.json
+
+# Generic private key files
+*.pem
+*.key
+*.p12
+
+# Google Cloud credentials
+**/credentials.json
+
+
+# =========================================================
+# Build output
+# =========================================================
+
+# Node/Express build output
+**/dist/
+**/build/
+
+# Frontend build output
+frontend/dist/
+frontend/build/
+
+# Next.js, if used later
+.next/
+out/
+
+
+# =========================================================
+# Logs
+# =========================================================
+
+*.log
+logs/
+**/logs/
+
+
+# =========================================================
+# Testing / coverage
+# =========================================================
+
+coverage/
+**/coverage/
+.nyc_output/
+
+
+# =========================================================
+# Cache files
+# =========================================================
+
+.cache/
+**/.cache/
+
+.npm/
+.eslintcache
+
+
+# =========================================================
+# Docker
+# =========================================================
+
+# Docker local override files
+docker-compose.override.yml
+docker-compose.local.yml
+
+
+# =========================================================
+# IDE / Editor files
+# =========================================================
+
+.vscode/
+.idea/
+
+# VS Code workspace files
+*.code-workspace
+
+
+# =========================================================
+# OS generated files
+# =========================================================
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+
+# =========================================================
+# Temporary files
+# =========================================================
+
+*.tmp
+*.temp
+*.swp
+*.swo
+
+
+# =========================================================
+# Debug files
+# =========================================================
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# =========================================================
+# Local database / generated data
+# =========================================================
+
+*.sqlite
+*.sqlite3
+*.db
+
+
+# =========================================================
+# Miscellaneous secrets
+# =========================================================
+
+*.secret
+*.credentials
